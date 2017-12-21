@@ -1,0 +1,74 @@
+<div class="row">
+	<div class="col-md-8 col-md-push-2">
+		<div class="page-header">
+			<h3>
+				Création d'un de tirage <small>renseigner les participants
+					de votre tirage</small>
+			</h3>
+		</div>
+
+	</div>
+</div>
+
+
+<div class="row" ng-init="init()">
+
+	<div class="col-md-8 col-md-push-2">
+		<!--Body content-->
+		<form class="form-horizontal">
+
+			<div class="form-group" ng-repeat="candidat in candidats">
+				<!-- <div class="form-inline"> -->
+				<div class="col-sm-5">
+					<input type="text" class="form-control" ng-model="candidat.nom"
+						placeholder="nom du client">
+				</div>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" ng-model="candidat.prenom"
+						placeholder="prenom">
+				</div>
+			</div>
+
+			<div class="col-sm-1" style="padding: 5px 5px 1px 1px; width: auto;">
+				<button type="button" class="close" aria-label="Close"
+					ng-click="supprimerLigne(candidat)"
+					ng-show="enableSupprimerLigne()">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</button>
+			</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-12">
+			<div class="pull-right col-sm-1" style="margin-right: 15px;">
+				<button class="btn btn-default btn-circle btn-lg" type="button"
+					ng-click="ajouterLigne()" ng-disabled="enableAjouterLigne()==false">
+					<i class="glyphicon glyphicon-plus"></i>
+				</button>
+				<!-- <button class="btn btn-default btn-circle btn-lg" type="button">
+              <i class="glyphicon glyphicon-edit"></i></button> -->
+			</div>
+		</div>
+	</div>
+
+	<!--  buttons-->
+	<!-- <div class="form-group" ng-show="!isValide">
+        <div class="col-sm-11">
+          <button class="btn btn-info btn-block btn-lg" type="button" ng-click="isValide=true;" >Valider</button>
+        </div>
+      </div> -->
+	<div class="form-group">
+		<div class="col-sm-11">
+			<button class="btn btn-info btn-block btn-lg" type="submit"
+				ng-click="create()">valider</button>
+		</div>
+	</div>
+	</form>
+
+	<!-- <div class="">
+
+      <pre> {{candidats | json}}</pre>
+    </div> -->
+</div>
+
+</div>

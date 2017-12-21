@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" ng-app="tirageApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <noscript>
+      <meta http-equiv="refresh" content="1; URL=no-js.html" />
+  </noscript>
+  <title>Tirage au sort</title>
+  <link rel="stylesheet" href="app/css/app.css">
+  <link rel="stylesheet" href="app/css/common.css">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.gif"> -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <!-- jQuery (required by Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" async></script>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-animate.min.js"></script>
+
+  <!--  angular-storage-->
+  <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="loader-block" ng-show="loaderEnabled && showLoading">
+        <div class="loader">Loading ...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="messages" class="col-xs-8 col-xs-offset-2"></div>
+  </div>
+
+  <nav class="navbar  navbar-default ">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-xs-push-1">
+          <div class="navbar-header">
+
+            <a  class="navbar-brand" href="#/home">
+              <!-- <i class="glyphicon glyphicon-home"></i> -->
+            <i >  <img style="width: 36px" src="app/img/4_des_rouge.png"></i>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+
+          <div class="collapse navbar-collapse " id="navbar-collapse">
+            <ul class="nav navbar-nav">
+              <!-- <li><a href="#/home"><i class="glyphicon glyphicon-home"></i></a></li> -->
+              <!-- <li role="separator" class=""></li> -->
+              <li><a href="#/result">Clients</a></li>
+              <li><a href="#/consulter">Consulter tirage</a></li>
+              <li><a href="#/mode-emploi">Mode d'emploi</a></li>
+
+            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/home">Connexion<span class="sr-only">(current)</span></a></li>
+              </ul> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+      <div class="col-xs-12">
+          <footer id="footer" class="row-fluid">
+            <p>Copyright © mbomintech &reg;</p>
+          </footer>
+      </div>
+  </div> -->
+
+
+  <!-- generated-->
+  <script src="app/js/app.js"></script>
+  <script src="app/js/controllers.js"></script>
+  <script src="app/js/services.js"></script>
+  <script src="app/js/properties.js"></script>
+  <script src="app/js/fpoly.js"></script>
+</body>
+
+</html>

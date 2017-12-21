@@ -1,0 +1,5 @@
+package jersey.factory;
+
+public class ClientFactoryDB {
+
+}

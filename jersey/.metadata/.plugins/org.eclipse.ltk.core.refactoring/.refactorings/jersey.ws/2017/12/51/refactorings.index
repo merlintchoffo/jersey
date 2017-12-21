@@ -1,0 +1,15 @@
+1513722771102	Rename compilation unit 'Client.java'
+1513802340764	Delete element
+1513808847977	Move folder
+1513809546429	Rename field 'motDePasse'
+1513809653511	Rename field 'name'
+1513809659780	Rename local variable 'name'
+1513811554962	Rename package 'jersey.data'
+1513811677763	Rename type 'ClientFactory'
+1513812063790	Rename field 'factory'
+1513812744599	Extract local variable 'clientFactory'
+1513812784212	Extract local variable 'findAll'
+1513814749005	Extract local variable 'client'
+1513815453044	Rename local variable 'idClient'
+1513815527499	Rename local variable 'id'
+1513815978250	Delete element

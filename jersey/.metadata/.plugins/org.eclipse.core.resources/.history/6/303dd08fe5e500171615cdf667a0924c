@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-8 col-md-push-2">
+    <div class="page-header">
+      <h3> Tirage
+        <strong ng-cloak> - {{companyDashboard}}</strong>
+        <br/>
+        <small>Communiquer le lien du tirage et le code secret à chaque participant</small>
+      </h3>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="row" ng-init="init()">
+
+  <div class="col-md-8 col-md-push-2">
+    <!--Body content-->
+    <div class="col-md-8 col-md-push-2">
+      <table class="table table-striped table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center">Email</th>
+            <th class="text-center">Lien du tirage</th>
+            <th class="text-center">Code secret</th>
+            <th class="text-center row">Status</th>
+            <th class="text-center row">notifié</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="candidat in candidats | orderBy : 'numero' | orderBy : 'email' ">
+            <td class="text-center">{{candidat.email}}</td>
+            <td class="text-center"><a ng-href="{{candidat.link}}">{{candidat.link}}</a></td>
+            <td class="text-center">{{candidat.secureCode}}</td>
+            <td class="text-center row">{{candidat.numero}}</td>
+            <td class="text-center row">{{candidat.notificationEnabled}}</td>
+          </tr>
+        </tbody>
+      </table>
+      </table>
+
+    </div>
+
+    <!-- <div class="">
+      <pre> {{candidats | json}}</pre>
+    </div> -->
+  </div>
+
+</div>

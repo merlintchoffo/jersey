@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+E:\ENVT\Workspaces\Jersey_Dev3_Solu\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1004643918.index

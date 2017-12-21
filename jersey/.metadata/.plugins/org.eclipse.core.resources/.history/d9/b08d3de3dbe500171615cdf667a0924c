@@ -1,0 +1,15 @@
+package jersey.factory;
+
+public class ClientFactoryDB {
+
+	//operations de CRUD
+	
+	public List<Client>findAll() {
+		return null;
+	}
+	
+	public Client findById(int numClient) {
+		return null;
+	}
+	
+}

@@ -1,0 +1,5 @@
+package jersey.ws;
+
+public class Hello {
+
+}

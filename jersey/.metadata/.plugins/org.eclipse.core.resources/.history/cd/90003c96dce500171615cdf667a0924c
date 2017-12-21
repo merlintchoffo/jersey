@@ -1,0 +1,41 @@
+package jersey.factory;
+
+import java.util.List;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import jersey.manager.Main;
+import jersey.model.Client;
+
+public class ClientFactoryDB {
+	
+	private static EntityManagerFactory emf;
+	
+	public ClientFactoryDB() {
+		emf = Persistence.createEntityManagerFactory(Main.PERSISTENCE_UNIT_NAME);
+	}
+
+	// operations de CRUD
+
+	public List<Client> findAll() {
+		return null;
+	}
+
+	public Client findById(int idClient) {
+		return null;
+	}
+
+	public Client findByNumClient(int numClient) {
+		return null;
+	}
+
+	public Client save(Client client) {
+		return null;
+	}
+
+	public boolean update(Client client) {
+		return false;
+	}
+
+}

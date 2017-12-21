@@ -1,0 +1,97 @@
+package jersey.data;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+//@XmlRootElement
+/*-- annotation Lombok https://projectlombok.org/. 
+@see doc ==> https://projectlombok.org/features/all */
+
+//@Builder
+@Data
+@Entity(name="client") 
+public class Client {
+
+	String name;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="num_client")
+	String numClient;
+	String prenom;
+	String codePostal;
+	String adresse;
+	String login;
+	String motDePasse;
+
+	public Client() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	 public Client(String name) {
+	 this.name = name;
+	 }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNumClient() {
+		return numClient;
+	}
+
+	public void setNumClient(String numClient) {
+		this.numClient = numClient;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getCodePostal() {
+		return codePostal;
+	}
+
+	public void setCodePostal(String codePostal) {
+		this.codePostal = codePostal;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getMotDePasse() {
+		return motDePasse;
+	}
+
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
+	 
+	 
+
+}

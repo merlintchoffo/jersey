@@ -1,0 +1,5 @@
+jersey\manager\Main.class
+jersey\factory\ClientFactoryDB.class
+jersey\model\Client.class
+jersey\ws\ClientResource.class
+jersey\ws\Hello.class

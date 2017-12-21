@@ -1,0 +1,9 @@
+package jersey.model;
+
+public class ClientLite {
+	
+	String nom;
+	String prenom;
+	String idClient;
+
+}
