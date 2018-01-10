@@ -1,5 +1,0 @@
-package jersey.factory;
-
-public class ClientFactory {
-
-}

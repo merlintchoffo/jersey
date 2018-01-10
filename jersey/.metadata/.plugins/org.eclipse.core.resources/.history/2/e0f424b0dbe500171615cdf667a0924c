@@ -1,7 +1,0 @@
-package jersey.factory;
-
-public class ClientFactoryDB {
-
-	//operations de CRUD
-	
-}

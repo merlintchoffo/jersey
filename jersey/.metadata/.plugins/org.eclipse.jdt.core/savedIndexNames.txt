@@ -1,3 +1,0 @@
-INDEX VERSION 1.130+E:\ENVT\Workspaces\Jersey_Dev3_Solu\.metadata\.plugins\org.eclipse.jdt.core
-1014902555.index
-1004643918.index
