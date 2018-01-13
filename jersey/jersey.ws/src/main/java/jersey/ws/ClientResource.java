@@ -3,6 +3,7 @@ package jersey.ws;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -27,7 +28,7 @@ public class ClientResource {
 		return clients;
 	}
 
-	@Path("client/{id}")
+	@Path("clients/{id}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Client getClient(@PathParam(value = "id") int id) {
@@ -43,5 +44,15 @@ public class ClientResource {
 		for (ClientLite cl : clients) {
 			clientFactory.save(cl.toClient());
 		}
+	}
+
+	@Path("clients/{num_client}")
+	@DELETE
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void removeClient(@PathParam(value = "num_client") String numClient) {
+		ClientFactoryDB clientFactory = new ClientFactoryDB();
+		Client client = clientFactory.findByNumClient(numClient);
+		System.out.println("delete " + numClient);
+		clientFactory.remove(client);
 	}
 }

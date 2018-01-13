@@ -17,13 +17,20 @@ tirageServices.factory('Client', ['$resource', function($resource) {
 
 
 tirageServices.factory('ClientSave', ['$resource', function($resource) {
-  return $resource('http://localhost:8080/jersey/rest/clients', {}, {
+  return $resource('http://localhost:8080/jersey/rest/clients/:num_client', {}, {
     save: {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
+    }, 
+    remove : {
+    	method: 'DELETE',
+    	 headers: {
+    	        'Content-Type': 'application/json'
+    	 }
     }
+   
   });
 }]);
 

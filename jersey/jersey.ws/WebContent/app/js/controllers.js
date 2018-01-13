@@ -113,12 +113,11 @@ tirageControllers.controller('tirageCtrl', ['$scope', '$rootScope', '$routeParam
     }
 ]);
 
-tirageControllers.controller('resultCtrl', ['$scope', '$rootScope', '$routeParams', '$location', '$log', 'fAlert', 'Client',
-    function($scope, $rootScope, $routeParams, $location, $log, fAlert, Client) {
+tirageControllers.controller('resultCtrl', ['$scope', '$rootScope', '$routeParams', '$location', '$log', 'fAlert', 'Client','ClientSave',
+    function($scope, $rootScope, $routeParams, $location, $log, fAlert, Client, ClientSave) {
 
         $scope.resultats = [];
         $scope.init = function() {
-
             $log.info('Client - charger les client');
             Client.all({
             }, function success(data) {
@@ -130,6 +129,33 @@ tirageControllers.controller('resultCtrl', ['$scope', '$rootScope', '$routeParam
                 });
             });
         };
+        
+        
+        $scope.supprClient =  function(client){
+        	 $log.info('Client - remove client');
+        	 $log.info(JSON.stringify(client));
+        	 
+        	 ClientSave.remove({
+               	 num_client : client.numClient
+                }, function success(data) {
+               	    $scope.resultats = _.reject( $scope.resultats, function(c) {
+                        return c.numClient == client.numClient;
+                    });
+               	    fAlert.success("enregistrer avec succes !", {
+                        timeout: 3000
+                    });
+                    //backup for next page
+                    $log.info(data);
+                    $location.path('/result/');
+                    $log.info($scope.resultats);
+                }, function error(e) {
+                    fAlert.error("une erreur s'est produite : " + e.statusText, {
+                        timeout: 3000
+                    });
+                });
+             
+        }
+        
     }
 ]);
 

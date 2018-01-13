@@ -10,7 +10,7 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ges_client" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="esir" />
+			<property name="javax.persistence.jdbc.password" value="root" />
 
 			<!-- EclipseLink should create the database schema automatically -->
 		<!-- 	<property name="eclipselink.ddl-generation" value="create-tables" />

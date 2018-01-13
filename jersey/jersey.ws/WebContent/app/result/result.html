@@ -19,14 +19,24 @@
     <table class="table table-striped table-condensed table-bordered">
       <thead>
         <tr>
+         <th class="text-center">NumClient</th>
           <th class="text-center">nom</th>
           <th class="text-center">prenom</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="result in resultats | orderBy : 'idClient' ">
-          <td class="text-center">{{result.nom}}</td>
-          <td class="text-center">{{result.prenom}}</td>
+        <tr ng-repeat="client in resultats | orderBy : 'idClient' ">
+          <td class="text-center">{{client.numClient}}</td>
+          <td class="text-center">{{client.nom}}</td>
+          <td class="text-center">{{client.prenom}}</td>
+          <td class="text-center">
+          	<div class="col-sm-1" style="padding: 5px 5px 1px 1px; width: auto;">
+				<button type="button" class="close" aria-label="Close" ng-click="supprClient(client)">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+				</button>
+			</div>
+		</td>
         </tr>
       </tbody>
     </table>

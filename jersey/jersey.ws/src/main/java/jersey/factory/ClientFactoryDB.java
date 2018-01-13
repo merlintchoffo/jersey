@@ -35,9 +35,17 @@ public class ClientFactoryDB {
 		return client;
 	}
 
-	public Client findByNumClient(int numClient) {
-		//TODO
-		return null;
+	public Client findByNumClient(String numClient) {
+		EntityManager em = emf.createEntityManager();
+		Query q = em.createQuery("select t from Client t where t.numClient = :pNumClient")
+				.setParameter("pNumClient", numClient);
+		List<Client> clients = q.getResultList();
+		em.close();
+		
+		if(!clients.isEmpty()){
+			return clients.get(0);
+		}
+		throw new IllegalArgumentException("Client not found for the given numClient" + numClient);
 	}
 
 	public boolean save(Client client) {
@@ -56,6 +64,16 @@ public class ClientFactoryDB {
 		em.getTransaction().commit();
 		em.close();
 		return false;
+	}
+
+	public boolean remove(Client client) {
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Client mergeClt = em.merge(client);
+		em.remove(mergeClt);
+		em.getTransaction().commit();
+		em.close();
+		return true;
 	}
 
 }
